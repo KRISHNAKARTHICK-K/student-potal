@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+/* Global smooth look */
+body {
+  background: #f1f5f9;
+  color: #1f2937;
+  font-family: Inter, system-ui, sans-serif;
+}
