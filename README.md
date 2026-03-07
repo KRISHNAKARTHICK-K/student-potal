@@ -1,189 +1,412 @@
-[README.md](https://github.com/user-attachments/files/22311791/README.md)
-# Student Portal - React.js Application
+# 🎓 Student Portal System
 
-A complete student portal built with React.js, featuring authentication, dashboard, profile management, and settings. Uses inline styles for consistent cross-browser compatibility.
+A full-stack **Student Portal Application** designed to streamline academic management for students, teachers, and administrators.
+The system provides modules for **attendance tracking, achievements management, resume ATS analysis, course management, and analytics dashboards**.
 
-## 🚀 Features
+This project is built using a **modern web stack** with React.js for the frontend and Node.js + Express.js for the backend.
 
-### Authentication System
-- **Login Page** - Email/password authentication with validation
-- **Signup Page** - User registration with form validation
-- **Forgot Password** - Password reset functionality
-- **Session Management** - Persistent login sessions using localStorage
+---
 
-### Protected Pages
-- **Dashboard** - Welcome page with quick actions and announcements
-- **Profile Page** - User profile with edit capabilities and password change
-- **Settings Page** - Account preferences, theme toggle, and notifications
-- **Navigation** - Responsive navigation bar for authenticated users
+# 🚀 Features
 
-### Technical Features
-- ✅ **React 18** with functional components and hooks
-- ✅ **Context API** for state management
-- ✅ **Form validation** with real-time error feedback
-- ✅ **Responsive design** that works on all devices
-- ✅ **Modern UI** with cards, shadows, and smooth transitions
-- ✅ **Inline styles** for maximum compatibility
-- ✅ **Mock authentication** with test credentials
+## Core Features
 
-## 📦 Installation
+* 👨‍🎓 **Student Dashboard**
 
-### 1. Create a new Vite React project:
+  * View profile details
+  * Track attendance
+  * View achievements
+  * Access academic data
+
+* 👩‍🏫 **Teacher Module**
+
+  * Mark student attendance
+  * View attendance summary
+  * Teacher analytics dashboard
+
+* 🛠 **Admin Module**
+
+  * Manage students
+  * Manage courses
+  * Monitor system usage
+
+---
+
+## Additional Modules
+
+### 🏆 Achievement Management
+
+Students can upload and track their achievements including:
+
+* Academic certificates
+* Sports achievements
+* Technical competition wins
+* Hackathon participation
+
+Admins can verify and manage submitted achievements.
+
+---
+
+### 📊 Attendance Management
+
+* Daily attendance marking
+* Attendance summary reports
+* Teacher attendance analytics
+* PDF attendance reports
+
+---
+
+### 📄 Resume ATS Analyzer
+
+Students can upload resumes and analyze them against **ATS (Applicant Tracking System) standards**.
+
+Features include:
+
+* Resume score analysis
+* Keyword optimization
+* Resume improvement suggestions
+
+---
+
+### 📈 Teacher Analytics
+
+Provides insights for teachers including:
+
+* Attendance trends
+* Student participation
+* Performance indicators
+
+---
+
+# 🛠 Tech Stack
+
+### Frontend
+
+* React.js
+* Tailwind CSS
+* Axios
+* React Router
+
+### Backend
+
+* Node.js
+* Express.js
+* REST API Architecture
+
+### Database
+
+* MySQL
+
+### Other Tools
+
+* JWT Authentication
+* PDF generation
+* File uploads
+
+---
+
+# ⚙ Installation Instructions
+
+## 1. Clone the Repository
+
 ```bash
-npm create vite@latest student-portal -- --template react
+git clone https://github.com/YOUR_USERNAME/student-portal.git
 cd student-portal
 ```
 
-### 2. Install dependencies:
+---
+
+## 2. Install Backend Dependencies
+
 ```bash
+cd backend
 npm install
 ```
 
-### 3. Install Tailwind CSS (optional - components use inline styles):
+---
+
+## 3. Install Frontend Dependencies
+
 ```bash
-npm install -D tailwindcss@next @tailwindcss/postcss@next postcss autoprefixer
+cd ../frontend
+npm install
 ```
 
-### 4. Replace the default files:
-Copy all the component files I provided into your `src` folder:
+---
+
+## 4. Setup Environment Variables
+
+Create a `.env` file inside the **backend** folder.
+
+Example:
 
 ```
-src/
-├── main.jsx
-├── App.jsx
-├── AuthContext.jsx
-├── LoginPage.jsx
-├── SignupPage.jsx
-├── ForgotPasswordPage.jsx
-├── Dashboard.jsx
-├── ProfilePage.jsx
-├── SettingsPage.jsx
-├── Navigation.jsx
-└── index.css
+PORT=5000
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=yourpassword
+DB_NAME=student_portal
+JWT_SECRET=your_secret_key
 ```
 
-### 5. Update configuration files:
-- Replace `tailwind.config.js`
-- Replace `postcss.config.js` 
-- Replace `vite.config.js`
-- Replace `package.json`
+---
 
-### 6. Start the development server:
+## 5. Setup Database
+
+Import the SQL schema files located in:
+
+```
+backend/schema_*.sql
+```
+
+Example:
+
+* achievements schema
+* teacher attendance schema
+* main system schema
+
+---
+
+# ▶ Running the Application
+
+## Start Backend Server
+
 ```bash
+cd backend
+npm start
+```
+
+Server runs on:
+
+```
+http://localhost:5000
+```
+
+---
+
+## Start Frontend
+
+```bash
+cd frontend
 npm run dev
 ```
 
-## 🔑 Test Credentials
-
-Use these accounts to test the application:
-
-**Account 1:**
-- Email: `john@example.com`
-- Password: `password123`
-
-**Account 2:**
-- Email: `jane@example.com`
-- Password: `password123`
-
-## 📱 Usage
-
-### Authentication Flow
-1. Start at the login page
-2. Use test credentials or create a new account
-3. Navigate between pages using the top navigation
-4. Logout from any page using the logout button
-
-### Features to Test
-- **Login/Logout** functionality
-- **Signup** with validation
-- **Profile editing** and password change
-- **Settings** preferences and theme toggle
-- **Form validation** on all forms
-- **Responsive design** on different screen sizes
-
-## 🛠 Customization
-
-### Adding New Pages
-1. Create a new component file in `src/`
-2. Import it in `App.jsx`
-3. Add routing logic in the `AppRouter` component
-4. Add navigation links in `Navigation.jsx`
-
-### Styling
-- Components use **inline styles** for maximum compatibility
-- **Colors**: Blue theme (#3b82f6) with consistent grays
-- **Responsive**: Uses CSS flexbox and grid with media queries
-- **Modern**: Rounded corners, shadows, smooth transitions
-
-### Authentication
-- Currently uses **mock data** stored in `AuthContext.jsx`
-- Replace with real API calls for production use
-- Session data stored in **localStorage**
-
-## 📁 Project Structure
+Application runs on:
 
 ```
-student-portal/
-├── public/
-├── src/
-│   ├── main.jsx              # React entry point
-│   ├── App.jsx               # Main app with routing
-│   ├── AuthContext.jsx       # Authentication state management
-│   ├── LoginPage.jsx         # Login form
-│   ├── SignupPage.jsx        # Registration form
-│   ├── ForgotPasswordPage.jsx # Password reset
-│   ├── Dashboard.jsx         # Main dashboard
-│   ├── ProfilePage.jsx       # User profile management
-│   ├── SettingsPage.jsx      # Settings and preferences
-│   ├── Navigation.jsx        # Navigation bar
-│   └── index.css             # Global styles
-├── index.html
-├── package.json
-├── vite.config.js
-├── tailwind.config.js
-└── postcss.config.js
+http://localhost:5173
 ```
 
-## 🎯 Key Components
+---
 
-### AuthContext
-- Manages user authentication state
-- Provides login, signup, logout functions
-- Handles session persistence
+# 🧩 Project Structure
 
-### Navigation
-- Responsive navigation bar
-- Shows current page highlighting
-- User profile and logout functionality
+```
+student-portal
+│
+├── backend
+│   ├── controllers
+│   ├── routes
+│   ├── middleware
+│   ├── migrations
+│   ├── services
+│   ├── scripts
+│   └── server.js
+│
+├── frontend
+│   ├── src
+│   │   ├── api
+│   │   ├── contexts
+│   │   ├── layout
+│   │   ├── pages
+│   │   ├── services
+│   │   └── App.jsx
+│   │
+│   └── package.json
+│
+├── documentation
+│   ├── ACHIEVEMENT_SYSTEM_SUMMARY.md
+│   ├── ATTENDANCE_DATE_FIX_SUMMARY.md
+│   └── TEACHER_MODULE_COMPLETE.md
+│
+└── README.md
+```
 
-### Form Validation
-- Real-time validation feedback
-- Required field checking
-- Email format validation
-- Password confirmation matching
+---
 
-## 💡 Development Tips
+# 🔑 Key Components
 
-1. **State Management**: Uses React Context API for global state
-2. **Styling**: Inline styles ensure consistency across browsers
-3. **Validation**: Form validation provides immediate user feedback
-4. **Navigation**: Simple state-based routing without external libraries
-5. **Responsiveness**: Mobile-first design with flexible layouts
+## Authentication System
 
-## 🚀 Deployment
+* JWT-based authentication
+* Secure login for:
 
-### Build for production:
-```bash
+  * Students
+  * Teachers
+  * Administrators
+
+---
+
+## Attendance Module
+
+Main files include:
+
+```
+attendance.controller.js
+attendance.routes.js
+TeacherAttendancePage.jsx
+TeacherAttendanceSummary.jsx
+```
+
+---
+
+## Achievement Module
+
+```
+achievement.controller.js
+achievement.routes.js
+AchievementsPage.jsx
+AchievementUploadPage.jsx
+AdminAchievementsPage.jsx
+```
+
+---
+
+## Resume ATS Analyzer
+
+```
+resume.controller.js
+resume.routes.js
+ResumeBuilder.jsx
+ATSAnalyzer.jsx
+resumeService.js
+```
+
+---
+
+# 🧑‍💻 Development Tips
+
+### 1. Use Modular Code
+
+Each module (attendance, achievements, resume ATS) is structured using:
+
+* Controller
+* Routes
+* Frontend page
+
+---
+
+### 2. API Communication
+
+All API calls are centralized in:
+
+```
+frontend/src/services/api.js
+```
+
+---
+
+### 3. Environment Configuration
+
+Sensitive credentials must always be stored in:
+
+```
+.env
+```
+
+Never commit `.env` files to GitHub.
+
+---
+
+### 4. Database Migrations
+
+SQL schemas are stored inside:
+
+```
+backend/migrations
+backend/schema_*.sql
+```
+
+These help maintain consistent database structure.
+
+---
+
+# 🚀 Deployment Instructions
+
+## Backend Deployment
+
+You can deploy backend on:
+
+* Render
+* Railway
+* AWS
+* DigitalOcean
+
+Steps:
+
+1. Push repository to GitHub
+2. Connect repository to hosting service
+3. Add environment variables
+4. Deploy Node.js server
+
+---
+
+## Frontend Deployment
+
+Deploy React frontend using:
+
+* Vercel
+* Netlify
+* GitHub Pages
+
+Example for Vercel:
+
+```
 npm run build
 ```
 
-### Preview production build:
-```bash
-npm run preview
+Upload the `dist` folder.
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+Steps:
+
+1. Fork the repository
+2. Create a feature branch
+
+```
+git checkout -b feature/new-module
 ```
 
-The application is ready for deployment to any static hosting service like Vercel, Netlify, or GitHub Pages.
+3. Commit changes
+4. Submit a Pull Request
 
-## 📧 Support
+---
 
-This is a complete, production-ready student portal application with modern React patterns and best practices. All components are fully functional with proper error handling and user feedback.
+# 📞 Support
+
+If you encounter issues:
+
+* Open an issue on GitHub
+* Contact the project maintainers
+
+---
+
+# 📜 License
+
+This project is developed for **educational and academic purposes**.
+
+---
+
+# ⭐ Acknowledgment
+
+Developed as part of a **Student Portal Academic Project** to demonstrate:
+
+* Full-stack development
+* REST API design
+* Database integration
+* Real-world academic system features
