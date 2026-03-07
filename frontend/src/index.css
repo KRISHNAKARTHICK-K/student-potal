@@ -1,0 +1,77 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+/* Theme variables */
+:root {
+  --background: 222 47% 6%;
+  --foreground: 210 40% 96%;
+  --card: 222 47% 9%;
+  --primary: 217 91% 60%;
+  --accent: 250 80% 65%;
+  --muted-foreground: 215 20% 55%;
+  --border: 222 30% 18%;
+}
+
+/* Reset */
+* {
+  border-color: hsl(var(--border));
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+/* Glass UI */
+.glass-card {
+  background: hsl(var(--card) / 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid hsl(var(--border) / 0.5);
+  border-radius: 1rem;
+}
+
+.glass-header {
+  background: hsl(var(--card) / 0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid hsl(var(--border) / 0.5);
+}
+
+/* Effects */
+.glow-text {
+  color: hsl(var(--primary));
+  text-shadow: 0 0 20px hsl(var(--primary) / 0.4);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 999px;
+}
